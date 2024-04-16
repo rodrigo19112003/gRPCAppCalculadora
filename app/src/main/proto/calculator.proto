@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.proto.calculator";
+
+message CalculatorRequest {
+    float firstNumber = 1;
+    float secondNumber = 2;
+}
+
+message CalculatorResponse {
+    float result = 1;
+}
+
+service CalculatorService {
+    rpc addition(CalculatorRequest) returns (CalculatorResponse);
+    rpc division(CalculatorRequest) returns (CalculatorResponse);
+    rpc multiplication(CalculatorRequest) returns (CalculatorResponse);
+    rpc subtraction(CalculatorRequest) returns (CalculatorResponse);
+} 
